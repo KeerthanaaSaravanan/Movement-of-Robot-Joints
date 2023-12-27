@@ -14,45 +14,88 @@ Visual Components Premium 4.3
 
 ## Program
 ```python
+from robomaster import robot
+import time
+from robomaster import camera
 
+if _name_ == '_main_':
+    ep_robot = robot.Robot()
+    ep_robot.initialize(conn_type="ap")
 
-hgy
+    ep_chassis = ep_robot.chassis
+    ep_led = ep_robot.led
+    ep_camera = ep_robot.camera
 
+    print("Video streaming started.....")
+    ep_camera.start_video_stream(display=True, resolution = camera.STREAM_360P)
 
+    ep_chassis.move(x=2.56, y=0, z=0, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=0,b=0,effect="on")
+    
+    ep_chassis.move(x=0.5, y=0, z=90, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=0,b=255,effect="on")
 
+    ep_chassis.move(x=1.1, y=0, z=0, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=0,g=0,b=128,effect="on")
+    
+    ep_chassis.move(x=0, y=0, z=80, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=0,g=0,b=128,effect="on")
+    
+    ep_chassis.move(x=1.5, y=0, z=0, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=0,g=0,b=128,effect="on")
+
+    ep_chassis.move(x=0, y=0, z=-125, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=204,b=153,effect="on")
+
+    ep_chassis.move(x=0, y=-1.2, z=0, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=204,g=255,b=255,effect="on")
+
+    ep_chassis.move(x=0, y=0, z=-48, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=153,g=51,b=102,effect="on")
+
+    ep_chassis.move(x=-1.6, y=0, z=0, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=204,g=153,b=255,effect="on")
+
+    ep_chassis.move(x=0, y=0, z=8, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=255,b=0,effect="on")
+
+    ep_chassis.move(x=0, y=2.15, z=0, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=255,b=0,effect="on")
+
+    ep_chassis.move(x=0, y=0, z=-10, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=128,g=128,b=0,effect="on")
+
+    ep_chassis.move(x=0.6, y=0, z=0, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=120,b=0,effect="on")
+
+    ep_chassis.move(x=0, y=0, z=0, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=0,g=0,b=255,effect="on")
+
+    time.sleep(4)
+    ep_camera.stop_video_stream()
+    print("Stopped video streaming.....")
+
+    ep_robot.close()
 ```
-## Output
-### 1. Generic Articulated Robot
-</br>
-</br>
-</br>
-</br>
 
-### 2. robot.driveJoints(0,0,0,0,0,0)
-</br>
-</br>
-</br>
-</br>
+## MobileRobot Movement Image:
 
-### 3. Movement of Joint1
-</br>
-</br>
-</br>
-</br>
+![Screenshot 2023-12-22 183049](https://github.com/KeerthanaaSaravanan/MOBILE-ROBOT/assets/145742596/1d8f9381-5b69-4aa6-842f-fe35d36ad58a)
+<br/>
+<br/>
 
-### 3. Movement of Joint2
-</br>
-</br>
-</br>
-</br>
+## MobileRobot Movement Video:
 
-### 3. Movement of Joint3
-</br>
-</br>
-</br>
-</br>
+https://youtu.be/_HK4BzRa-Aw
+<br/>
+<br/>
 
-## Result 
-Thus the different robots joints are moved with the help of python list.
-
-
+## Result:
+Thus the python program code is developed to move the mobilerobot in the predefined path.
+```
+Mobile Robotics Laboratory
+Department of Artificial Intelligence and Data Science/ Machine Learning
+Saveetha Engineering College
+```
+<br/>
+<br/>
